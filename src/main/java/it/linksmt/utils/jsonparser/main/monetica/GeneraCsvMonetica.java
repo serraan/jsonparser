@@ -1,4 +1,4 @@
-package it.linksmt.utils.jsonparser.main;
+package it.linksmt.utils.jsonparser.main.monetica;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -11,22 +11,24 @@ import org.apache.commons.csv.CSVPrinter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import it.linksmt.utils.jsonparser.main.utils.Utils;
 import it.linksmt.utils.jsonparser.types.Aggregato;
-import it.linksmt.utils.jsonparser.types.CustodiaTitoli;
+import it.linksmt.utils.jsonparser.types.TopLevel;
 
-public class Application {
-
+public class GeneraCsvMonetica {
+	
 	static final String[] HEADERS = { "nome", "codice", "nome1", "valore1", "nome2", "valore2" };
-	static final String PATH = "C:\\Users\\SERRAANDREA\\Desktop\\custodiaTitoli.csv";
-	static final String RESOURCE_NAME = "custodiaTitoli.json";
-
+	// CAMBIARE QUESTO PATH CON QUELLO NEL QUALE SI VUOLE SALVARE IL FILE.
+	static final String PATH = "C:\\Users\\SERRAANDREA\\Desktop\\monetica.csv";
+	static final String RESOURCE_NAME = "monetica.json";
+	
 	public static void main(String[] args) throws IOException {
 		Utils utils = new Utils();
 		ObjectMapper objectMapper = new ObjectMapper();
-		String custodiaTitoliJson = utils.getJsonStringFromFile(RESOURCE_NAME);
-		CustodiaTitoli custodiaTitoli = objectMapper.readValue(custodiaTitoliJson, CustodiaTitoli.class);
+		String moneticaJson = utils.getJsonStringFromFile(RESOURCE_NAME);
+		TopLevel monetica = objectMapper.readValue(moneticaJson, TopLevel.class);
 
-		List<Aggregato> aggregati = custodiaTitoli.getDecorrenze().get(0).getAggregati();
+		List<Aggregato> aggregati = monetica.getDecorrenze().get(0).getAggregati();
 
 		List<String> nomi = new ArrayList<>();
 		List<String> codici = new ArrayList<>();
@@ -57,5 +59,4 @@ public class Application {
 		}
 
 	}
-
 }

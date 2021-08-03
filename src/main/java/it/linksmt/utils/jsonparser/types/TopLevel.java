@@ -2,7 +2,7 @@ package it.linksmt.utils.jsonparser.types;
 
 import java.util.List;
 
-public class CustodiaTitoli {
+public class TopLevel {
 
 	private String chiaveServizio;
 	private String codiceServizioAnagrafe;

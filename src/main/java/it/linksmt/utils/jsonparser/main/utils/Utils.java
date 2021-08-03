@@ -1,4 +1,4 @@
-package it.linksmt.utils.jsonparser.main;
+package it.linksmt.utils.jsonparser.main.utils;
 
 import java.io.File;
 import java.io.IOException;
