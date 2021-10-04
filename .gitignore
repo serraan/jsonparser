@@ -55,3 +55,7 @@ local.properties
 .scala_dependencies
 .worksheet
 /target/
+out/artifacts/jsonparser_jar/jsonparser.jar
+.idea/artifacts/jsonparser_jar.xml
+.idea/.name
+src/main/resources/META-INF/MANIFEST.MF
