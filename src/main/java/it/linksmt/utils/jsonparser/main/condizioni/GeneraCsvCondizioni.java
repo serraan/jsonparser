@@ -6,6 +6,7 @@ import it.linksmt.utils.jsonparser.types.TopLevel;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,7 +17,7 @@ public class GeneraCsvCondizioni {
 
     static final String[] HEADERS = {"aggregato", "condizione", "attr1_nome", "attr1_valore", "attr2_nome", "attr2_valore"};
     // CAMBIARE QUESTO PATH CON QUELLO NEL QUALE SI VUOLE SALVARE IL FILE.
-    static final String PATH = "C:\\Users\\LONGOG\\Downloads\\custodiaTitoli-2.csv";
+    static final String PATH = new JFileChooser().getFileSystemView().getDefaultDirectory().toString();
     static final String RESOURCE_NAME = "condizioni.json";
 
     public static void main(String[] args) throws IOException {
